@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* More subtle, contemplative gradient - deep indigo to soft dawn */
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #74546a 100%);
+    color: #FFD700;
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.portal-container {
+    position: relative;
+    width: 95vw;
+    max-width: 1000px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 3s ease-in 1s forwards;
+    color: #C9A96E;
+}
+
+.figure-eight-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.infinity-svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: fadeIn 2s ease-in 2s forwards;
+}
+
+.city-circle {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.city-circle:hover {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.9));
+}
+
+.city-text {
+    font-size: 14px;
+    text-anchor: middle;
+    dominant-baseline: central;
+    fill: #FFD700;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    pointer-events: none;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.bioregion-text {
+    font-size: 10px;
+    text-anchor: middle;
+    dominant-baseline: central;
+    fill: #C9A96E;
+    font-family: Georgia, serif;
+    font-style: italic;
+    pointer-events: none;
+}
+
+.intention-bridge {
+    margin-top: 2rem;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-in 4s forwards;
+}
+
+.bridge-link {
+    color: #C9A96E;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #C9A96E;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.bridge-link:hover {
+    background: rgba(201, 169, 110, 0.2);
+    box-shadow: 0 0 20px rgba(201, 169, 110, 0.4);
+    transform: translateY(-2px);
+}
+
+.footer {
+    position: fixed;
+    bottom: 20px;
+    font-size: 0.9rem;
+    color: #C9A96E;
+    opacity: 0;
+    animation: fadeIn 2s ease-in 5s forwards;
+    text-align: center;
+    line-height: 1.4;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 768px) {
+    .figure-eight-container {
+        width: 100%;
+        height: 400px;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .city-text {
+        font-size: 12px;
+    }
+    
+    .bioregion-text {
+        font-size: 9px;
+    }
+}
