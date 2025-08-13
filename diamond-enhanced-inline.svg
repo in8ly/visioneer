@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Central light source -->
+        <radialGradient id="sourceLight" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+            <stop offset="30%" stop-color="#fbbf24" stop-opacity="0.9" />
+            <stop offset="60%" stop-color="#a855f7" stop-opacity="0.7" />
+            <stop offset="100%" stop-color="#1e1b4b" stop-opacity="0.2" />
+        </radialGradient>
+
+        <!-- Diamond facet gradients with animations -->
+        <linearGradient id="facet1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8">
+                <animate attributeName="stop-color" values="#ffffff;#a855f7;#ffffff" dur="7s" repeatCount="indefinite"/>
+            </stop>
+            <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.3" />
+        </linearGradient>
+
+        <linearGradient id="facet2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8">
+                <animate attributeName="stop-color" values="#ffffff;#10b981;#ffffff" dur="7s" begin="1s" repeatCount="indefinite"/>
+            </stop>
+            <stop offset="100%" stop-color="#10b981" stop-opacity="0.3" />
+        </linearGradient>
+
+        <linearGradient id="facet3" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8">
+                <animate attributeName="stop-color" values="#ffffff;#f59e0b;#ffffff" dur="7s" begin="2s" repeatCount="indefinite"/>
+            </stop>
+            <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.3" />
+        </linearGradient>
+
+        <linearGradient id="facet4" x1="100%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8">
+                <animate attributeName="stop-color" values="#ffffff;#ef4444;#ffffff" dur="7s" begin="3s" repeatCount="indefinite"/>
+            </stop>
+            <stop offset="100%" stop-color="#ef4444" stop-opacity="0.3" />
+        </linearGradient>
+
+        <!-- Subtle pulse animation -->
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+            <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+
+        <!-- Sparkle filter -->
+        <filter id="sparkle">
+            <feGaussianBlur stdDeviation="1" result="coloredBlur" />
+            <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+
+        <!-- Background gradient -->
+        <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#a855f7" stop-opacity="0.1" />
+            <stop offset="100%" stop-color="#1e1b4b" stop-opacity="0.05" />
+        </radialGradient>
+    </defs>
+
+    <!-- Subtle background -->
+    <rect width="400" height="400" fill="url(#bgGlow)" />
+
+    <!-- Outer diamond structure - brilliant cut from above -->
+    <g opacity="0.6">
+        <!-- Main octagonal structure with rotation -->
+        <g>
+            <polygon points="200,60 300,100 340,200 300,300 200,340 100,300 60,200 100,100" 
+                     fill="none" stroke="#a855f7" stroke-width="1">
+                <animateTransform attributeName="transform"
+                                type="rotate"
+                                from="0 200 200"
+                                to="360 200 200"
+                                dur="60s"
+                                repeatCount="indefinite"/>
+            </polygon>
+        </g>
+
+        <!-- Inner octagonal facets with counter-rotation -->
+        <g>
+            <polygon points="200,100 260,130 280,200 260,270 200,300 140,270 120,200 140,130" 
+                     fill="none" stroke="#3b82f6" stroke-width="1">
+                <animateTransform attributeName="transform"
+                                type="rotate"
+                                from="360 200 200"
+                                to="0 200 200"
+                                dur="45s"
+                                repeatCount="indefinite"/>
+            </polygon>
+        </g>
+
+        <!-- Central crown facets with pulse -->
+        <polygon points="200,140 230,160 220,200 200,220 180,200 170,160" 
+                 fill="none" stroke="#10b981" stroke-width="1">
+            <animate attributeName="stroke-width"
+                     values="1;2;1"
+                     dur="3s"
+                     repeatCount="indefinite"/>
+        </polygon>
+    </g>
+
+    <!-- Main diamond facets with shimmer -->
+    <g opacity="0.8">
+        <!-- Top facet -->
+        <polygon points="200,100 140,130 200,180 260,130" fill="url(#facet1)">
+            <animate attributeName="opacity"
+                     values="0.8;1;0.8"
+                     dur="7s"
+                     repeatCount="indefinite"/>
+        </polygon>
+
+        <!-- Right facet -->
+        <polygon points="260,130 280,200 200,180 200,140" fill="url(#facet2)">
+            <animate attributeName="opacity"
+                     values="0.8;1;0.8"
+                     dur="7s"
+                     begin="1s"
+                     repeatCount="indefinite"/>
+        </polygon>
+
+        <!-- Bottom facet -->
+        <polygon points="200,300 260,270 200,220 140,270" fill="url(#facet3)">
+            <animate attributeName="opacity"
+                     values="0.8;1;0.8"
+                     dur="7s"
+                     begin="2s"
+                     repeatCount="indefinite"/>
+        </polygon>
+
+        <!-- Left facet -->
+        <polygon points="140,130 120,200 200,180 200,140" fill="url(#facet4)">
+            <animate attributeName="opacity"
+                     values="0.8;1;0.8"
+                     dur="7s"
+                     begin="3s"
+                     repeatCount="indefinite"/>
+        </polygon>
+
+        <!-- Corner facets with subtle pulse -->
+        <g>
+            <polygon points="300,100 280,200 260,130 260,100" fill="url(#facet1)" opacity="0.6">
+                <animate attributeName="opacity"
+                         values="0.6;0.8;0.6"
+                         dur="5s"
+                         repeatCount="indefinite"/>
+            </polygon>
+            <polygon points="300,300 260,270 280,200 300,200" fill="url(#facet2)" opacity="0.6">
+                <animate attributeName="opacity"
+                         values="0.6;0.8;0.6"
+                         dur="5s"
+                         begin="1.25s"
+                         repeatCount="indefinite"/>
+            </polygon>
+            <polygon points="100,300 140,270 120,200 100,200" fill="url(#facet3)" opacity="0.6">
+                <animate attributeName="opacity"
+                         values="0.6;0.8;0.6"
+                         dur="5s"
+                         begin="2.5s"
+                         repeatCount="indefinite"/>
+            </polygon>
+            <polygon points="100,100 120,200 140,130 140,100" fill="url(#facet4)" opacity="0.6">
+                <animate attributeName="opacity"
+                         values="0.6;0.8;0.6"
+                         dur="5s"
+                         begin="3.75s"
+                         repeatCount="indefinite"/>
+            </polygon>
+        </g>
+    </g>
+
+    <!-- Central source point with pulse -->
+    <g filter="url(#glow)">
+        <circle cx="200" cy="200" r="20" fill="url(#sourceLight)">
+            <animate attributeName="r"
+                     values="20;22;20"
+                     dur="3s"
+                     repeatCount="indefinite"/>
+        </circle>
+        <circle cx="200" cy="200" r="10" fill="#ffffff" opacity="0.9">
+            <animate attributeName="r"
+                     values="10;12;10"
+                     dur="3s"
+                     repeatCount="indefinite"/>
+        </circle>
+        <circle cx="200" cy="200" r="4" fill="#fbbf24">
+            <animate attributeName="r"
+                     values="4;5;4"
+                     dur="3s"
+                     repeatCount="indefinite"/>
+        </circle>
+    </g>
+
+    <!-- Light rays emanating through facets with shimmer -->
+    <g opacity="0.7">
+        <!-- Primary rays -->
+        <g>
+            <line x1="200" y1="200" x2="200" y2="60" stroke="#ffffff" stroke-width="2">
+                <animate attributeName="opacity"
+                         values="0.7;1;0.7"
+                         dur="4s"
+                         repeatCount="indefinite"/>
+            </line>
+            <line x1="200" y1="200" x2="340" y2="200" stroke="#ffffff" stroke-width="2">
+                <animate attributeName="opacity"
+                         values="0.7;1;0.7"
+                         dur="4s"
+                         begin="1s"
+                         repeatCount="indefinite"/>
+            </line>
+            <line x1="200" y1="200" x2="200" y2="340" stroke="#ffffff" stroke-width="2">
+                <animate attributeName="opacity"
+                         values="0.7;1;0.7"
+                         dur="4s"
+                         begin="2s"
+                         repeatCount="indefinite"/>
+            </line>
+            <line x1="200" y1="200" x2="60" y2="200" stroke="#ffffff" stroke-width="2">
+                <animate attributeName="opacity"
+                         values="0.7;1;0.7"
+                         dur="4s"
+                         begin="3s"
+                         repeatCount="indefinite"/>
+            </line>
+        </g>
+
+        <!-- Diagonal rays -->
+        <g>
+            <line x1="200" y1="200" x2="300" y2="100" stroke="#fbbf24" stroke-width="1.5">
+                <animate attributeName="opacity"
+                         values="0.7;1;0.7"
+                         dur="4s"
+                         begin="0.5s"
+                         repeatCount="indefinite"/>
+            </line>
+            <line x1="200" y1="200" x2="300" y2="300" stroke="#fbbf24" stroke-width="1.5">
+                <animate attributeName="opacity"
+                         values="0.7;1;0.7"
+                         dur="4s"
+                         begin="1.5s"
+                         repeatCount="indefinite"/>
+            </line>
+            <line x1="200" y1="200" x2="100" y2="300" stroke="#fbbf24" stroke-width="1.5">
+                <animate attributeName="opacity"
+                         values="0.7;1;0.7"
+                         dur="4s"
+                         begin="2.5s"
+                         repeatCount="indefinite"/>
+            </line>
+            <line x1="200" y1="200" x2="100" y2="100" stroke="#fbbf24" stroke-width="1.5">
+                <animate attributeName="opacity"
+                         values="0.7;1;0.7"
+                         dur="4s"
+                         begin="3.5s"
+                         repeatCount="indefinite"/>
+            </line>
+        </g>
+    </g>
+
+    <!-- Refracted light patterns with pulse -->
+    <g opacity="0.5">
+        <!-- Inner reflections -->
+        <path d="M200,180 Q220,160 240,180 Q220,200 200,180" fill="#a855f7" opacity="0.4">
+            <animate attributeName="opacity"
+                     values="0.4;0.6;0.4"
+                     dur="3s"
+                     repeatCount="indefinite"/>
+        </path>
+        <path d="M200,220 Q180,200 160,220 Q180,240 200,220" fill="#3b82f6" opacity="0.4">
+            <animate attributeName="opacity"
+                     values="0.4;0.6;0.4"
+                     dur="3s"
+                     begin="0.75s"
+                     repeatCount="indefinite"/>
+        </path>
+        <path d="M220,200 Q200,180 180,200 Q200,220 220,200" fill="#10b981" opacity="0.4">
+            <animate attributeName="opacity"
+                     values="0.4;0.6;0.4"
+                     dur="3s"
+                     begin="1.5s"
+                     repeatCount="indefinite"/>
+        </path>
+        <path d="M180,200 Q200,220 220,200 Q200,180 180,200" fill="#f59e0b" opacity="0.4">
+            <animate attributeName="opacity"
+                     values="0.4;0.6;0.4"
+                     dur="3s"
+                     begin="2.25s"
+                     repeatCount="indefinite"/>
+        </path>
+    </g>
+
+    <!-- Sparkles at facet intersections -->
+    <g filter="url(#sparkle)">
+        <!-- Seven nodes represented as sparkles -->
+        <g>
+            <circle cx="170" cy="160" r="2" fill="#ffffff" opacity="0.8">
+                <animate attributeName="r"
+                         values="2;3;2"
+                         dur="2s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="opacity"
+                         values="0.8;1;0.8"
+                         dur="2s"
+                         repeatCount="indefinite"/>
+            </circle>
+            <circle cx="230" cy="160" r="2" fill="#ffffff" opacity="0.8">
+                <animate attributeName="r"
+                         values="2;3;2"
+                         dur="2s"
+                         begin="0.285s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="opacity"
+                         values="0.8;1;0.8"
+                         dur="2s"
+                         begin="0.285s"
+                         repeatCount="indefinite"/>
+            </circle>
+            <circle cx="230" cy="240" r="2" fill="#ffffff" opacity="0.8">
+                <animate attributeName="r"
+                         values="2;3;2"
+                         dur="2s"
+                         begin="0.57s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="opacity"
+                         values="0.8;1;0.8"
+                         dur="2s"
+                         begin="0.57s"
+                         repeatCount="indefinite"/>
+            </circle>
+            <circle cx="170" cy="240" r="2" fill="#ffffff" opacity="0.8">
+                <animate attributeName="r"
+                         values="2;3;2"
+                         dur="2s"
+                         begin="0.855s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="opacity"
+                         values="0.8;1;0.8"
+                         dur="2s"
+                         begin="0.855s"
+                         repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <!-- Additional sparkles -->
+        <g>
+            <circle cx="140" cy="130" r="1.5" fill="#fbbf24" opacity="0.7">
+                <animate attributeName="r"
+                         values="1.5;2;1.5"
+                         dur="3s"
+                         begin="1.14s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="opacity"
+                         values="0.7;0.9;0.7"
+                         dur="3s"
+                         begin="1.14s"
+                         repeatCount="indefinite"/>
+            </circle>
+            <circle cx="260" cy="130" r="1.5" fill="#fbbf24" opacity="0.7">
+                <animate attributeName="r"
+                         values="1.5;2;1.5"
+                         dur="3s"
+                         begin="1.425s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="opacity"
+                         values="0.7;0.9;0.7"
+                         dur="3s"
+                         begin="1.425s"
+                         repeatCount="indefinite"/>
+            </circle>
+            <circle cx="260" cy="270" r="1.5" fill="#fbbf24" opacity="0.7">
+                <animate attributeName="r"
+                         values="1.5;2;1.5"
+                         dur="3s"
+                         begin="1.71s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="opacity"
+                         values="0.7;0.9;0.7"
+                         dur="3s"
+                         begin="1.71s"
+                         repeatCount="indefinite"/>
+            </circle>
+        </g>
+    </g>
+
+    <!-- Outer light emanations -->
+    <g opacity="0.3">
+        <circle cx="200" cy="30" r="3" fill="#a855f7">
+            <animate attributeName="opacity"
+                     values="0.3;0.5;0.3"
+                     dur="4s"
+                     repeatCount="indefinite"/>
+        </circle>
+        <circle cx="370" cy="200" r="3" fill="#3b82f6">
+            <animate attributeName="opacity"
+                     values="0.3;0.5;0.3"
+                     dur="4s"
+                     begin="1s"
+                     repeatCount="indefinite"/>
+        </circle>
+        <circle cx="200" cy="370" r="3" fill="#10b981">
+            <animate attributeName="opacity"
+                     values="0.3;0.5;0.3"
+                     dur="4s"
+                     begin="2s"
+                     repeatCount="indefinite"/>
+        </circle>
+        <circle cx="30" cy="200" r="3" fill="#f59e0b">
+            <animate attributeName="opacity"
+                     values="0.3;0.5;0.3"
+                     dur="4s"
+                     begin="3s"
+                     repeatCount="indefinite"/>
+        </circle>
+
+        <circle cx="330" cy="70" r="2" fill="#ffffff">
+            <animate attributeName="opacity"
+                     values="0.3;0.5;0.3"
+                     dur="4s"
+                     begin="0.5s"
+                     repeatCount="indefinite"/>
+        </circle>
+        <circle cx="330" cy="330" r="2" fill="#ffffff">
+            <animate attributeName="opacity"
+                     values="0.3;0.5;0.3"
+                     dur="4s"
+                     begin="1.5s"
+                     repeatCount="indefinite"/>
+        </circle>
+        <circle cx="70" cy="330" r="2" fill="#ffffff">
+            <animate attributeName="opacity"
+                     values="0.3;0.5;0.3"
+                     dur="4s"
+                     begin="2.5s"
+                     repeatCount="indefinite"/>
+        </circle>
+        <circle cx="70" cy="70" r="2" fill="#ffffff">
+            <animate attributeName="opacity"
+                     values="0.3;0.5;0.3"
+                     dur="4s"
+                     begin="3.5s"
+                     repeatCount="indefinite"/>
+        </circle>
+    </g>
+
+    <!-- Dynamic pulse rings -->
+    <g opacity="0.2">
+        <circle cx="200" cy="200" r="60" fill="none" stroke="#ffffff" stroke-width="1">
+            <animate attributeName="r"
+                     values="60;65;60"
+                     dur="4s"
+                     repeatCount="indefinite"/>
+            <animate attributeName="opacity"
+                     values="0.2;0.3;0.2"
+                     dur="4s"
+                     repeatCount="indefinite"/>
+        </circle>
+        <circle cx="200" cy="200" r="100" fill="none" stroke="#a855f7" stroke-width="0.5">
+            <animate attributeName="r"
+                     values="100;105;100"
+                     dur="4s"
+                     begin="1s"
+                     repeatCount="indefinite"/>
+            <animate attributeName="opacity"
+                     values="0.2;0.3;0.2"
+                     dur="4s"
+                     begin="1s"
+                     repeatCount="indefinite"/>
+        </circle>
+        <circle cx="200" cy="200" r="140" fill="none" stroke="#3b82f6" stroke-width="0.5">
+            <animate attributeName="r"
+                     values="140;145;140"
+                     dur="4s"
+                     begin="2s"
+                     repeatCount="indefinite"/>
+            <animate attributeName="opacity"
+                     values="0.2;0.3;0.2"
+                     dur="4s"
+                     begin="2s"
+                     repeatCount="indefinite"/>
+        </circle>
+    </g>
+</svg>
