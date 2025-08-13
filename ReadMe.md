@@ -14,6 +14,8 @@ This project serves as a digital mandala—a portal of remembrance, clarity, and
 - Bioregional mapping and figure-8 portals
 - AI-generated poetic transmissions
 - Responsive design for mobile and desktop
+- Focus Mode with deep geometry reveal
+- Inline SVG diamond for guaranteed rendering
 
 ## 🛠️ Tech Stack
 
@@ -21,6 +23,32 @@ This project serves as a digital mandala—a portal of remembrance, clarity, and
 - VS Code
 - GitHub
 - Vercel (for deployment)
+
+### URL Structure
+
+The site is deployed to Vercel with clean URLs (no .html extension needed) and canonical URLs:
+
+- Main site: https://visioneer-five.vercel.app/
+- Power to Cooperate page: https://visioneer-five.vercel.app/power-to-cooperate
+
+URLs with .html extensions automatically redirect to the clean version.
+
+### SVG Inline Pattern
+
+For critical visualizations like the diamond, we use inline SVG rather than external files:
+
+1. Improves loading reliability (no separate HTTP request)
+2. Allows direct CSS interaction with SVG elements
+3. Eliminates object/iframe loading uncertainties
+
+For gradient stops in SVGs, we use attributes rather than inline styles:
+```html
+<!-- GOOD: Use attributes -->
+<stop offset="0%" stop-color="#dc2626" stop-opacity="0.9" />
+
+<!-- AVOID: Inline styles -->
+<stop offset="0%" style="stop-color:#dc2626;stop-opacity:0.9"/>
+```
 
 ### Cache Busting Assets
 

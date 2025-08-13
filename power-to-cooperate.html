@@ -7,6 +7,7 @@
     <title>Power to Cooperate</title>
     <link rel="stylesheet" href="styles.css?v=20250813-4">
     <!-- deploy-trace: commit 0661caf applied marker A -->
+    <link rel="canonical" href="https://visioneer-five.vercel.app/power-to-cooperate" />
 </head>
 
 <body>
@@ -37,18 +38,125 @@
     <p>At the end of our journey. We find strength in unity.</p>
     <div class="portal-container">
         <div class="diamond-container">
-            <object data="assets/diamond-unified.svg?v=20250813-4" type="image/svg+xml" class="diamond-svg"
-                aria-label="Unified diamond visualization (interactive SVG)">
-                <!-- Fallback content shown if SVG fails to load -->
-                <div class="diamond-fallback" role="img" aria-label="Placeholder – imagine a glowing diamond here">
-                    <div class="diamond-fallback-core"></div>
-                    <div class="diamond-fallback-ring ring1"></div>
-                    <div class="diamond-fallback-ring ring2"></div>
-                    <p class="diamond-fallback-text">Imagine a glowing, breathing unified diamond here…<br>
-                        (If this message remains, the SVG didn’t load. Try a hard refresh or view on the deployed site.)
-                    </p>
-                </div>
-            </object>
+            <div class="diamond-svg" role="img" aria-label="Unified diamond visualization (inline SVG)">
+                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="nodeGradient1">
+                            <stop offset="0%" stop-color="#dc2626" stop-opacity="0.9" />
+                            <stop offset="100%" stop-color="#dc2626" stop-opacity="0.2" />
+                        </radialGradient>
+                        <radialGradient id="nodeGradient2">
+                            <stop offset="0%" stop-color="#fb923c" stop-opacity="0.9" />
+                            <stop offset="100%" stop-color="#fb923c" stop-opacity="0.2" />
+                        </radialGradient>
+                        <radialGradient id="nodeGradient3">
+                            <stop offset="0%" stop-color="#facc15" stop-opacity="0.9" />
+                            <stop offset="100%" stop-color="#facc15" stop-opacity="0.2" />
+                        </radialGradient>
+                        <radialGradient id="nodeGradient4">
+                            <stop offset="0%" stop-color="#22c55e" stop-opacity="0.9" />
+                            <stop offset="100%" stop-color="#22c55e" stop-opacity="0.2" />
+                        </radialGradient>
+                        <radialGradient id="nodeGradient5">
+                            <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.9" />
+                            <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.2" />
+                        </radialGradient>
+                        <radialGradient id="nodeGradient6">
+                            <stop offset="0%" stop-color="#6366f1" stop-opacity="0.9" />
+                            <stop offset="100%" stop-color="#6366f1" stop-opacity="0.2" />
+                        </radialGradient>
+                        <radialGradient id="nodeGradient7">
+                            <stop offset="0%" stop-color="#a855f7" stop-opacity="0.9" />
+                            <stop offset="100%" stop-color="#a855f7" stop-opacity="0.2" />
+                        </radialGradient>
+                        <filter id="sceneBlur">
+                            <feGaussianBlur stdDeviation="1.5" />
+                        </filter>
+                        <filter id="observerGlow">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                        <filter id="unifiedSparkle">
+                            <feGaussianBlur stdDeviation="0.5" />
+                            <feComposite in="SourceGraphic" operator="over" />
+                        </filter>
+                        <radialGradient id="calmingBackground">
+                            <stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.2">
+                                <animate attributeName="stop-opacity" values="0.2;0.3;0.2" dur="10s"
+                                    repeatCount="indefinite" />
+                            </stop>
+                            <stop offset="70%" stop-color="#0ea5e9" stop-opacity="0.4">
+                                <animate attributeName="stop-opacity" values="0.4;0.5;0.4" dur="10s"
+                                    repeatCount="indefinite" />
+                            </stop>
+                            <stop offset="100%" stop-color="#0369a1" stop-opacity="0.6">
+                                <animate attributeName="stop-opacity" values="0.6;0.7;0.6" dur="10s"
+                                    repeatCount="indefinite" />
+                            </stop>
+                        </radialGradient>
+                        <radialGradient id="unifiedDiamond" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+                            <stop offset="50%" stop-color="#c7d2fe" stop-opacity="0.9" />
+                            <stop offset="100%" stop-color="#818cf8" stop-opacity="0.7" />
+                        </radialGradient>
+                    </defs>
+                    <rect width="400" height="400" fill="url(#calmingBackground)" />
+                    <g filter="url(#sceneBlur)">
+                        <g opacity="0.3">
+                            <circle cx="200" cy="200" r="180" fill="none" stroke="#e0f2fe" stroke-width="0.5">
+                                <animateTransform attributeName="transform" type="rotate" from="0 200 200"
+                                    to="360 200 200" dur="30s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="200" cy="200" r="160" fill="none" stroke="#bae6fd" stroke-width="0.5">
+                                <animateTransform attributeName="transform" type="rotate" from="360 200 200"
+                                    to="0 200 200" dur="25s" repeatCount="indefinite" />
+                            </circle>
+                        </g>
+                    </g>
+                    <g filter="url(#observerGlow)">
+                        <g opacity="0.9">
+                            <polygon points="200,60 300,100 340,200 300,300 200,340 100,300 60,200 100,100"
+                                fill="url(#unifiedDiamond)" stroke="#c7d2fe" stroke-width="1">
+                                <animate attributeName="opacity" values="0.9;1;0.9" dur="4s" repeatCount="indefinite" />
+                            </polygon>
+                        </g>
+                        <g filter="url(#unifiedSparkle)">
+                            <circle cx="200" cy="200" r="5" fill="#ffffff" opacity="0.9">
+                                <animate attributeName="r" values="5;6;5" dur="4s" repeatCount="indefinite" />
+                            </circle>
+                            <g>
+                                <circle cx="200" cy="100" r="3" fill="#ffffff" opacity="0.8" />
+                                <circle cx="300" cy="200" r="3" fill="#ffffff" opacity="0.8" />
+                                <circle cx="200" cy="300" r="3" fill="#ffffff" opacity="0.8" />
+                                <circle cx="100" cy="200" r="3" fill="#ffffff" opacity="0.8" />
+                                <circle cx="270" cy="130" r="3" fill="#ffffff" opacity="0.8" />
+                                <circle cx="270" cy="270" r="3" fill="#ffffff" opacity="0.8" />
+                                <circle cx="130" cy="270" r="3" fill="#ffffff" opacity="0.8" />
+                                <animate attributeName="opacity" values="0.8;1;0.8" dur="4s" repeatCount="indefinite" />
+                            </g>
+                        </g>
+                        <g opacity="0.6">
+                            <circle cx="200" cy="200" r="40" fill="none" stroke="#ffffff" stroke-width="0.5">
+                                <animate attributeName="r" values="40;45;40" dur="4s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" values="0.6;0.8;0.6" dur="4s"
+                                    repeatCount="indefinite" />
+                            </circle>
+                        </g>
+                    </g>
+                    <g opacity="0.2">
+                        <g>
+                            <path d="M 50,200 A 150,150 0 0,1 350,200" stroke="#bae6fd" fill="none">
+                                <animateTransform attributeName="transform" type="rotate" from="0 200 200"
+                                    to="360 200 200" dur="20s" repeatCount="indefinite" />
+                            </path>
+                            <path d="M 200,50 A 150,150 0 0,1 200,350" stroke="#7dd3fc" fill="none">
+                                <animateTransform attributeName="transform" type="rotate" from="360 200 200"
+                                    to="0 200 200" dur="25s" repeatCount="indefinite" />
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </div>
         </div>
     </div>
     <p><a href="agent-dot.html">Visit Agent Dot</a> • <a href="index.html">Back to Home</a></p>
@@ -62,34 +170,34 @@
     </footer>
     <script src="script.js?v=20250813-4"></script>
     <script>
-    (function(){
-        const obj = document.querySelector('.diamond-container object');
-        if(!obj) return;
-        let loaded = false;
-        obj.addEventListener('load', function(){
-            loaded = true;
-            try {
-                const svgDoc = obj.contentDocument;
-                if(!svgDoc) { console.warn('[diamond] Loaded but no contentDocument (cross-origin?)'); }
-                else {
-                    const rootTag = svgDoc.documentElement && svgDoc.documentElement.tagName;
-                    console.log('[diamond] SVG loaded:', rootTag);
+        (function () {
+            const obj = document.querySelector('.diamond-container object');
+            if (!obj) return;
+            let loaded = false;
+            obj.addEventListener('load', function () {
+                loaded = true;
+                try {
+                    const svgDoc = obj.contentDocument;
+                    if (!svgDoc) { console.warn('[diamond] Loaded but no contentDocument (cross-origin?)'); }
+                    else {
+                        const rootTag = svgDoc.documentElement && svgDoc.documentElement.tagName;
+                        console.log('[diamond] SVG loaded:', rootTag);
+                    }
+                } catch (e) { console.warn('[diamond] Access blocked:', e.message); }
+            });
+            setTimeout(function () {
+                if (!loaded) {
+                    console.warn('[diamond] SVG did not load within 5s. Checking network...');
+                    fetch(obj.getAttribute('data').split('?')[0]).then(r => {
+                        console.log('[diamond] Fetch status', r.status, r.ok ? 'OK' : 'Problem');
+                        if (!r.ok) console.warn('Response not OK. Path or deploy issue.');
+                        return r.text();
+                    }).then(txt => {
+                        if (!/\<svg[\s>]/i.test(txt)) console.warn('Fetched file does not contain <svg>. Content snippet:', txt.slice(0, 120));
+                    }).catch(err => console.warn('[diamond] Network error fetching SVG:', err.message));
                 }
-            } catch(e){ console.warn('[diamond] Access blocked:', e.message); }
-        });
-        setTimeout(function(){
-            if(!loaded){
-                console.warn('[diamond] SVG did not load within 5s. Checking network...');
-                fetch(obj.getAttribute('data').split('?')[0]).then(r=>{
-                    console.log('[diamond] Fetch status', r.status, r.ok? 'OK':'Problem');
-                    if(!r.ok) console.warn('Response not OK. Path or deploy issue.');
-                    return r.text();
-                }).then(txt => {
-                    if(!/\<svg[\s>]/i.test(txt)) console.warn('Fetched file does not contain <svg>. Content snippet:', txt.slice(0,120));
-                }).catch(err=> console.warn('[diamond] Network error fetching SVG:', err.message));
-            }
-        }, 5000);
-    })();
+            }, 5000);
+        })();
     </script>
     <!-- end-trace 0661caf -->
 </body>

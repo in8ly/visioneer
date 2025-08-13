@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 circle.setAttribute('cx', center.cx);
                 circle.setAttribute('cy', center.cy);
                 circle.setAttribute('r', center.r);
-                circle.setAttribute('fill', center.fill); 
+                circle.setAttribute('fill', center.fill);
                 circle.setAttribute('stroke', center.color);
                 circle.setAttribute('stroke-width', '2');
                 circle.style.cursor = 'pointer';
-                
+
                 circle.addEventListener('click', () => {
                     if (center.url) {
                         window.open(center.url, '_blank');
@@ -112,14 +112,14 @@ function startRippleSequence() {
                     // Reset and trigger the ripple
                     const cityCircle = document.querySelector(`#city-${cityNumber}`);
                     const baseRadius = cityCircle ? cityCircle.getAttribute('r') : '30';
-                    
+
                     ripple.setAttribute('r', baseRadius);
                     ripple.setAttribute('opacity', '0');
-                    
+
                     // Animate the ripple expanding and fading
                     const startRadius = parseInt(baseRadius);
                     const endRadius = startRadius + 60 + (i * 20);
-                    
+
                     // Create smooth ripple animation
                     ripple.innerHTML = `
                         <animate attributeName="r" 
@@ -139,12 +139,12 @@ function startRippleSequence() {
     function checkStarPosition() {
         const currentTime = performance.now();
         const elapsed = (currentTime - animationStartTime) % 21000; // 21 second cycle
-        
+
         // Calculate which city the star should be near based on timing
         // The star follows this path timing approximately:
         // Toronto: 0-2.5s, Halifax: 2.5-5.5s, Montreal: 5.5-8.5s, Ottawa: 8.5-11.5s, 
         // Calgary: 11.5-14.5s, Edmonton: 14.5-17.5s, Vancouver: 17.5-21s
-        
+
         let currentCity = null;
         if (elapsed >= 0 && elapsed < 3000) currentCity = 1;      // Toronto
         else if (elapsed >= 3000 && elapsed < 6000) currentCity = 2;   // Halifax
@@ -168,7 +168,7 @@ function startRippleSequence() {
 
     // Check star position every 100ms for smooth tracking
     setInterval(checkStarPosition, 100);
-    
+
     // Also reset the animation start time periodically to stay in sync
     setInterval(() => {
         animationStartTime = performance.now();
