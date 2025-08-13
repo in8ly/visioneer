@@ -20,8 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 circle.setAttribute('cx', center.cx);
                 circle.setAttribute('cy', center.cy);
                 circle.setAttribute('r', center.r);
-                // A default fill, can be customized in JSON later
-                circle.setAttribute('fill', 'rgba(220, 38, 38, 0.2)'); 
+                circle.setAttribute('fill', center.fill); 
                 circle.setAttribute('stroke', center.color);
                 circle.setAttribute('stroke-width', '2');
                 circle.style.cursor = 'pointer';

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "1. Toronto",
+    "bioregion": "Great Lakes",
+    "cx": 620,
+    "cy": 180,
+    "r": 30,
+    "color": "#dc2626",
+    "fill": "rgba(220, 38, 38, 0.2)",
+    "url": "https://brahmakumaris.ca/toronto/"
+  },
+  {
+    "name": "2. Halifax",
+    "bioregion": "Acadian",
+    "cx": 700,
+    "cy": 250,
+    "r": 32,
+    "color": "#fb923c",
+    "fill": "rgba(251, 146, 60, 0.2)",
+    "url": "https://halifax.brahmakumaris.ca/"
+  },
+  {
+    "name": "3. Montréal",
+    "bioregion": "Estuary",
+    "cx": 620,
+    "cy": 320,
+    "r": 30,
+    "color": "#facc15",
+    "fill": "rgba(250, 204, 21, 0.2)",
+    "url": "https://montreal.brahmakumaris.ca/en/home/"
+  },
+  {
+    "name": "4. Ottawa",
+    "bioregion": "Land Between",
+    "cx": 450,
+    "cy": 250,
+    "r": 35,
+    "color": "#22c55e",
+    "fill": "rgba(34, 197, 94, 0.2)",
+    "url": "/https://brahmakumaris.ca/ottawa/"
+  },
+  {
+    "name": "5. Calgary",
+    "bioregion": "Bow River",
+    "cx": 280,
+    "cy": 180,
+    "r": 30,
+    "color": "#38bdf8",
+    "fill": "rgba(56, 189, 248, 0.2)",
+    "url": "https://calgary.brahmakumaris.ca"
+  },
+  {
+    "name": "6. Edmonton",
+    "bioregion": "Parkland",
+    "cx": 200,
+    "cy": 250,
+    "r": 32,
+    "color": "#6366f1",
+    "fill": "rgba(99, 102, 241, 0.2)",
+    "url": "https://edmonton.brahmakumaris.ca"
+  },
+  {
+    "name": "7. Vancouver",
+    "bioregion": "Cascadia",
+    "cx": 280,
+    "cy": 320,
+    "r": 30,
+    "color": "#a855f7",
+    "fill": "rgba(168, 85, 247, 0.2)",
+    "url": "https://vancouver.brahmakumaris.ca"
+  }
+]
