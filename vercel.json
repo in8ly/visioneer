@@ -1,32 +1,50 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    { "source": "/index.html", "destination": "/" },
-    { "source": "/power-to-cooperate.html", "destination": "/power-to-cooperate" },
-    { "source": "/agent-dot.html", "destination": "/agent-dot" },
-    { "source": "/sacred-tech.html", "destination": "/sacred-tech" },
-    { "source": "/inner-quest.html", "destination": "/inner-quest" },
-    { "source": "/intention-bridge.html", "destination": "/intention-bridge" }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "redirects": [
         {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        }
-      ]
-    },
-    {
-      "source": "/assets/(.*)",
-      "headers": [
+            "source": "/index.html",
+            "destination": "/"
+        },
         {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
+            "source": "/power-to-cooperate.html",
+            "destination": "/power-to-cooperate"
+        },
+        {
+            "source": "/agent-dot.html",
+            "destination": "/agent-dot"
+        },
+        {
+            "source": "/sacred-tech.html",
+            "destination": "/sacred-tech"
+        },
+        {
+            "source": "/inner-quest.html",
+            "destination": "/inner-quest"
+        },
+        {
+            "source": "/intention-bridge.html",
+            "destination": "/intention-bridge"
         }
-      ]
-    }
-  ]
+    ],
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=0, must-revalidate"
+                }
+            ]
+        },
+        {
+            "source": "/assets/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                }
+            ]
+        }
+    ]
 }
