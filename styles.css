@@ -240,6 +240,8 @@ body {
     max-width: 600px;
     margin: 2rem auto;
     background: linear-gradient(to bottom, #7dd3fc10, #0ea5e920);
+    /* Ensure visible space for embedded SVG even before it loads */
+    min-height: 400px;
 }
 
 .diamond-svg {
