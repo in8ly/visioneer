@@ -197,7 +197,35 @@ body {
         font-size: 1rem;
         margin-bottom: 1.5rem;
     }
-    
+
+/* Power to Cooperate page styles */
+.diamond-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: linear-gradient(to bottom, #7dd3fc10, #0ea5e920);
+}
+
+.diamond-svg {
+    width: 100%;
+    height: auto;
+}
+
+.footer-static {
+    position: static;
+    margin-top: 2rem;
+    color: #fff;
+}
+
+.footer-divider {
+    border-color: #fff;
+    margin: 1rem 0;
+}
+
+.sacred-tech-link {
+    color: #FFD700;
+    text-decoration: underline;
+}
+
     .city-text {
         font-size: 11px;
     }

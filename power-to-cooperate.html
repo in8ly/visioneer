@@ -11,78 +11,12 @@
 <body>
     <h1>Power to Cooperate</h1>
     <p>At the end of our journey. We find strength in unity.</p>
-    <div style="max-width:600px; margin:2rem auto; background:linear-gradient(to bottom, #7dd3fc10, #0ea5e920);">
-        <object data="diamond-unified.svg?v=20250813" type="image/svg+xml" style="width:100%; height:auto;">
+    <div class="diamond-container">
+        <object data="diamond-unified.svg?v=20250813-2" type="image/svg+xml" class="diamond-svg">
             Unified diamond visualization - The centered observer
         </object>
     </div>
-    <!-- Central light source -->
-    <radialGradient id="sourceLight" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-        <stop offset="30%" style="stop-color:#fbbf24;stop-opacity:0.9" />
-        <stop offset="60%" style="stop-color:#a855f7;stop-opacity:0.7" />
-        <stop offset="100%" style="stop-color:#1e1b4b;stop-opacity:0.2" />
-    </radialGradient>
 
-    <!-- Diamond facet gradients -->
-    <linearGradient id="facet1" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
-        <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.3" />
-    </linearGradient>
-
-    <linearGradient id="facet2" x1="100%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
-        <stop offset="100%" style="stop-color:#10b981;stop-opacity:0.3" />
-    </linearGradient>
-
-    <linearGradient id="facet3" x1="0%" y1="100%" x2="100%" y2="0%">
-        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
-        <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:0.3" />
-    </linearGradient>
-
-    <linearGradient id="facet4" x1="100%" y1="100%" x2="0%" y2="0%">
-        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
-        <stop offset="100%" style="stop-color:#ef4444;stop-opacity:0.3" />
-    </linearGradient>
-
-    <!-- Subtle pulse animation -->
-    <filter id="glow">
-        <feGaussianBlur stdDeviation="2" result="coloredBlur" />
-        <feMerge>
-            <feMergeNode in="coloredBlur" />
-            <feMergeNode in="SourceGraphic" />
-        </feMerge>
-    </filter>
-
-    <!-- Sparkle filter -->
-    <filter id="sparkle">
-        <feGaussianBlur stdDeviation="1" result="coloredBlur" />
-        <feMerge>
-            <feMergeNode in="coloredBlur" />
-            <feMergeNode in="SourceGraphic" />
-        </feMerge>
-    </filter>
-    </defs>
-
-    <!-- Dawn background with gentle rotation -->
-    <defs>
-        <!-- Sunrise gradient -->
-        <radialGradient id="dawnSky" cx="50%" cy="70%" r="80%">
-            <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:0.3" />
-            <stop offset="40%" style="stop-color:#B4D9EF;stop-opacity:0.8" />
-            <stop offset="80%" style="stop-color:#7dd3fc;stop-opacity:0.9" />
-            <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:1" />
-        </radialGradient>
-
-        <!-- Rotating dawn -->
-        <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 200 200" to="360 200 200"
-            dur="120s" repeatCount="indefinite" />
-    </defs>
-
-    <rect width="400" height="400" fill="url(#dawnSky)">
-        <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 200 200" to="360 200 200"
-            dur="120s" repeatCount="indefinite" />
-    </rect>
 
     <!-- Outer diamond structure - brilliant cut from above -->
     <g opacity="0.6">
@@ -187,13 +121,12 @@
         <circle cx="75" cy="75" r="60" fill="#fff" />
     </svg>
     <p><a href="agent-dot.html">Visit Agent Dot</a> • <a href="index.html">Back to Home</a></p>
-    <footer class="footer" style="position:static; margin-top:2rem; color:#fff;">
-        <hr style="border-color:#fff; margin:1rem 0;">
+    <footer class="footer footer-static">
+        <hr class="footer-divider">
         <h2>✨ Call for Collaboration</h2>
         <p>Are you inspired by the vision of sacred technology and spiritual coordination? <br>
             We invite developers, designers, and spiritual technologists to co-create the next phase.<br>
-            <a href="sacred-tech.html" style="color:#FFD700; text-decoration:underline;">Learn more &amp; join the
-                Sacred Tech Flow</a>
+            <a href="sacred-tech.html" class="sacred-tech-link">Learn more &amp; join the Sacred Tech Flow</a>
         </p>
     </footer>
     <script src="script.js?v=20250812"></script>
