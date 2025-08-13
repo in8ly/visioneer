@@ -276,3 +276,12 @@ body {
     }
 }
 }
+
+/* Reusable SVG section layout for inner pages */
+.svg-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+    margin: 1.5rem 0;
+}
