@@ -28,8 +28,8 @@ This project serves as a digital mandala—a portal of remembrance, clarity, and
 
 The site is deployed to Vercel with clean URLs (no .html extension needed) and canonical URLs:
 
-- Main site: https://visioneer-five.vercel.app/
-- Power to Cooperate page: https://visioneer-five.vercel.app/power-to-cooperate
+- Main site: https://visioneer-jh23jezin-chariheys-projects.vercel.app/
+- Power to Cooperate page: https://visioneer-jh23jezin-chariheys-projects.vercel.app/power-to-cooperate
 
 URLs with .html extensions automatically redirect to the clean version.
 
