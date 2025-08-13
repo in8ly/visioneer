@@ -61,6 +61,36 @@
         </p>
     </footer>
     <script src="script.js?v=20250813-4"></script>
+    <script>
+    (function(){
+        const obj = document.querySelector('.diamond-container object');
+        if(!obj) return;
+        let loaded = false;
+        obj.addEventListener('load', function(){
+            loaded = true;
+            try {
+                const svgDoc = obj.contentDocument;
+                if(!svgDoc) { console.warn('[diamond] Loaded but no contentDocument (cross-origin?)'); }
+                else {
+                    const rootTag = svgDoc.documentElement && svgDoc.documentElement.tagName;
+                    console.log('[diamond] SVG loaded:', rootTag);
+                }
+            } catch(e){ console.warn('[diamond] Access blocked:', e.message); }
+        });
+        setTimeout(function(){
+            if(!loaded){
+                console.warn('[diamond] SVG did not load within 5s. Checking network...');
+                fetch(obj.getAttribute('data').split('?')[0]).then(r=>{
+                    console.log('[diamond] Fetch status', r.status, r.ok? 'OK':'Problem');
+                    if(!r.ok) console.warn('Response not OK. Path or deploy issue.');
+                    return r.text();
+                }).then(txt => {
+                    if(!/\<svg[\s>]/i.test(txt)) console.warn('Fetched file does not contain <svg>. Content snippet:', txt.slice(0,120));
+                }).catch(err=> console.warn('[diamond] Network error fetching SVG:', err.message));
+            }
+        }, 5000);
+    })();
+    </script>
     <!-- end-trace 0661caf -->
 </body>
 
