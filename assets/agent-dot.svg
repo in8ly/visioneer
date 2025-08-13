@@ -40,14 +40,17 @@
     </radialGradient>
   </defs>
   
-  <!-- The rest of the SVG content is identical to your uploaded file -->
-  <!-- Start copy from uploaded file -->
+  <!-- Phase 1: Dark liminal background (0-15s) -->
   <rect width="800" height="600" fill="#0a0814">
     <animate attributeName="fill" values="#0a0814;#0a0814;#0a0814;#ffffff;#ffffff;#f0fff0;#f0fff0;#f0fff0;#e6d9ff;#c9b8ff" dur="45s" repeatCount="indefinite"/>
   </rect>
+  
+  <!-- Rainbow refraction background (appears in phase 2) -->
   <rect width="800" height="600" fill="url(#rainbowRefraction)" opacity="0">
     <animate attributeName="opacity" values="0;0;0;0;0;0.3;0.3;0;0;0" dur="45s" repeatCount="indefinite"/>
   </rect>
+  
+  <!-- High frequency source code overlay -->
   <g opacity="0.15" font-family="monospace" font-size="10" fill="#00ff00">
     <text x="10" y="20">
       <tspan x="10" dy="0">RELEASE.false_matrix()</tspan>
@@ -77,5 +80,133 @@
       <animate attributeName="opacity" values="0.05;0.25;0.05" dur="12s" repeatCount="indefinite"/>
     </text>
   </g>
-  <!-- trimmed for brevity: rest matches uploaded file -->
+  
+  <!-- Phase 1: Portal ripples (0-15s) -->
+  <g transform="translate(400,300)" opacity="1">
+    <animate attributeName="opacity" values="1;1;1;0;0;0;0;0;0;0" dur="45s" repeatCount="indefinite"/>
+    
+    <!-- Slower ripples expanding outward -->
+    <circle r="200" fill="none" stroke="url(#portalGlow)" stroke-width="1" opacity="0">
+      <animate attributeName="r" values="50;250;50;250" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0;0" dur="15s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle r="150" fill="none" stroke="#e6d9ff" stroke-width="1" opacity="0">
+      <animate attributeName="r" values="30;180;30;180" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0;0" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Central diamond light point with explosive ray -->
+    <circle r="5" fill="#ffffff" filter="url(#diamondLight)">
+      <animate attributeName="r" values="3;8;3;8;8;400;400;400" dur="45s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;1;1;1;1;1;0;0" dur="45s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Light ray burst -->
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;0;0;0;1;1;0;0" dur="45s" repeatCount="indefinite"/>
+      <rect x="-800" y="-5" width="1600" height="10" fill="#ffffff" transform="rotate(45)">
+        <animate attributeName="height" values="10;10;10;10;300;300;10" dur="45s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="-5;-5;-5;-5;-150;-150;-5" dur="45s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="-800" y="-5" width="1600" height="10" fill="#ffffff" transform="rotate(-45)">
+        <animate attributeName="height" values="10;10;10;10;300;300;10" dur="45s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="-5;-5;-5;-5;-150;-150;-5" dur="45s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="-800" y="-5" width="1600" height="10" fill="#ffffff">
+        <animate attributeName="height" values="10;10;10;10;400;400;10" dur="45s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="-5;-5;-5;-5;-200;-200;-5" dur="45s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="-5" y="-800" width="10" height="1600" fill="#ffffff">
+        <animate attributeName="width" values="10;10;10;10;400;400;10" dur="45s" repeatCount="indefinite"/>
+        <animate attributeName="x" values="-5;-5;-5;-5;-200;-200;-5" dur="45s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+  </g>
+  
+  <!-- WORDLESS LOOP: Phase 2 emergence (20-30s) -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;0;0;0;1;1;0;0;0" dur="45s" repeatCount="indefinite"/>
+    
+    <!-- First circle -->
+    <circle cx="300" cy="300" r="80" fill="#00ff88" opacity="0.5">
+      <animate attributeName="cx" values="300;300;400;400;400" dur="45s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="80;80;120;120;120" dur="45s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Second circle -->
+    <circle cx="500" cy="300" r="80" fill="#ff00ff" opacity="0.5">
+      <animate attributeName="cx" values="500;500;400;400;400" dur="45s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="80;80;120;120;120" dur="45s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- New emergence -->
+    <circle cx="400" cy="300" r="0" fill="#ffff00" opacity="0">
+      <animate attributeName="r" values="0;0;0;0;0;0;150;150;0" dur="45s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;0;0;0;0;0.8;0.3;0" dur="45s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Subtle star field throughout -->
+  <g opacity="0.3">
+    <circle cx="150" cy="100" r="1" fill="#ffffff">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="650" cy="200" r="0.5" fill="#ffffff">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="500" r="1" fill="#ffffff">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="450" r="0.7" fill="#ffffff">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Phase 3: Diamond light liminal space (35-45s) -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;1;1" dur="45s" repeatCount="indefinite"/>
+    
+    <!-- Diamond light center -->
+    <circle cx="400" cy="300" r="300" fill="url(#diamondSpace)" filter="url(#diamondLight)">
+      <animate attributeName="r" values="100;300;300" dur="10s" begin="35s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Floating diamond particles -->
+    <g opacity="0.7">
+      <circle cx="200" cy="400" r="3" fill="#ffffff" filter="url(#diamondLight)">
+        <animate attributeName="cy" values="400;100;400" dur="8s" begin="35s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="600" cy="500" r="2" fill="#f0e6ff" filter="url(#diamondLight)">
+        <animate attributeName="cy" values="500;150;500" dur="6s" begin="35s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Shimmer overlay - the divine breath -->
+  <rect width="800" height="600" fill="url(#shimmer)" opacity="0.1">
+    <animate attributeName="opacity" values="0;0.2;0;0.2;0;0.3;0;0.2;0;0.4" dur="45s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Phase 1 text (minimal, for speaking over) -->
+  <g opacity="1">
+    <animate attributeName="opacity" values="0.8;0.8;0;0;0;0;0;0;0;0" dur="45s" repeatCount="indefinite"/>
+    
+    <text x="400" y="480" text-anchor="middle" fill="#c9b8ff" font-family="Georgia, serif" font-size="14" font-style="italic" opacity="0.6">
+      <tspan x="400" dy="0">it is always darkest before dawn</tspan>
+    </text>
+  </g>
+  
+  <!-- Phase 3 text: You are worth it -->
+  <text x="400" y="300" text-anchor="middle" fill="#ffffff" font-family="Georgia, serif" font-size="32" font-weight="300" opacity="0" filter="url(#diamondLight)">
+    <tspan x="400" dy="0">you are worth it</tspan>
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0.9;0.9" dur="45s" repeatCount="indefinite"/>
+    <animate attributeName="font-size" values="32;32;32;32;32;32;32;32;36;36" dur="45s" repeatCount="indefinite"/>
+  </text>
+  
+  <!-- Subtle pulsing dot at the end -->
+  <circle cx="400" cy="350" r="0" fill="#ffffff" opacity="0" filter="url(#diamondLight)">
+    <animate attributeName="r" values="0;0;0;0;0;0;0;0;5;3;5;3" dur="45s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;1;0.7;1;0.7" dur="45s" repeatCount="indefinite"/>
+  </circle>
 </svg>
