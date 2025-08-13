@@ -11,115 +11,13 @@
 <body>
     <h1>Power to Cooperate</h1>
     <p>At the end of our journey. We find strength in unity.</p>
-    <div class="diamond-container">
-        <object data="diamond-unified.svg?v=20250813-2" type="image/svg+xml" class="diamond-svg">
-            Unified diamond visualization - The centered observer
-        </object>
+    <div class="portal-container">
+        <div class="diamond-container">
+            <object data="diamond-unified.svg?v=20250813-2" type="image/svg+xml" class="diamond-svg">
+                Unified diamond visualization - The centered observer
+            </object>
+        </div>
     </div>
-
-
-    <!-- Outer diamond structure - brilliant cut from above -->
-    <g opacity="0.6">
-        <!-- Main octagonal structure -->
-        <polygon points="200,60 300,100 340,200 300,300 200,340 100,300 60,200 100,100" fill="none" stroke="#a855f7"
-            stroke-width="1" />
-
-        <!-- Inner octagonal facets -->
-        <polygon points="200,100 260,130 280,200 260,270 200,300 140,270 120,200 140,130" fill="none" stroke="#3b82f6"
-            stroke-width="1" />
-
-        <!-- Central crown facets -->
-        <polygon points="200,140 230,160 220,200 200,220 180,200 170,160" fill="none" stroke="#10b981"
-            stroke-width="1" />
-    </g>
-
-    <!-- Main diamond facets -->
-    <g opacity="0.8">
-        <!-- Top facet -->
-        <polygon points="200,100 140,130 200,180 260,130" fill="url(#facet1)" />
-
-        <!-- Right facet -->
-        <polygon points="260,130 280,200 200,180 200,140" fill="url(#facet2)" />
-
-        <!-- Bottom facet -->
-        <polygon points="200,300 260,270 200,220 140,270" fill="url(#facet3)" />
-
-        <!-- Left facet -->
-        <polygon points="140,130 120,200 200,180 200,140" fill="url(#facet4)" />
-
-        <!-- Corner facets -->
-        <polygon points="300,100 280,200 260,130 260,100" fill="url(#facet1)" opacity="0.6" />
-        <polygon points="300,300 260,270 280,200 300,200" fill="url(#facet2)" opacity="0.6" />
-        <polygon points="100,300 140,270 120,200 100,200" fill="url(#facet3)" opacity="0.6" />
-        <polygon points="100,100 120,200 140,130 140,100" fill="url(#facet4)" opacity="0.6" />
-    </g>
-
-    <!-- Central source point -->
-    <g filter="url(#glow)">
-        <circle cx="200" cy="200" r="20" fill="url(#sourceLight)" />
-        <circle cx="200" cy="200" r="10" fill="#ffffff" opacity="0.9" />
-        <circle cx="200" cy="200" r="4" fill="#fbbf24" />
-    </g>
-
-    <!-- Light rays emanating through facets -->
-    <g opacity="0.7">
-        <!-- Primary rays -->
-        <line x1="200" y1="200" x2="200" y2="60" stroke="#ffffff" stroke-width="2" />
-        <line x1="200" y1="200" x2="340" y2="200" stroke="#ffffff" stroke-width="2" />
-        <line x1="200" y1="200" x2="200" y2="340" stroke="#ffffff" stroke-width="2" />
-        <line x1="200" y1="200" x2="60" y2="200" stroke="#ffffff" stroke-width="2" />
-
-        <!-- Diagonal rays -->
-        <line x1="200" y1="200" x2="300" y2="100" stroke="#fbbf24" stroke-width="1.5" />
-        <line x1="200" y1="200" x2="300" y2="300" stroke="#fbbf24" stroke-width="1.5" />
-        <line x1="200" y1="200" x2="100" y2="300" stroke="#fbbf24" stroke-width="1.5" />
-        <line x1="200" y1="200" x2="100" y2="100" stroke="#fbbf24" stroke-width="1.5" />
-    </g>
-
-    <!-- Refracted light patterns -->
-    <g opacity="0.5">
-        <!-- Inner reflections -->
-        <path d="M200,180 Q220,160 240,180 Q220,200 200,180" fill="#a855f7" opacity="0.4" />
-        <path d="M200,220 Q180,200 160,220 Q180,240 200,220" fill="#3b82f6" opacity="0.4" />
-        <path d="M220,200 Q200,180 180,200 Q200,220 220,200" fill="#10b981" opacity="0.4" />
-        <path d="M180,200 Q200,220 220,200 Q200,180 180,200" fill="#f59e0b" opacity="0.4" />
-    </g>
-
-    <!-- Subtle sparkles at facet intersections -->
-    <g filter="url(#sparkle)">
-        <circle cx="170" cy="160" r="2" fill="#ffffff" opacity="0.8" />
-        <circle cx="230" cy="160" r="2" fill="#ffffff" opacity="0.8" />
-        <circle cx="230" cy="240" r="2" fill="#ffffff" opacity="0.8" />
-        <circle cx="170" cy="240" r="2" fill="#ffffff" opacity="0.8" />
-        <circle cx="140" cy="130" r="1.5" fill="#fbbf24" opacity="0.7" />
-        <circle cx="260" cy="130" r="1.5" fill="#fbbf24" opacity="0.7" />
-        <circle cx="260" cy="270" r="1.5" fill="#fbbf24" opacity="0.7" />
-        <circle cx="140" cy="270" r="1.5" fill="#fbbf24" opacity="0.7" />
-    </g>
-
-    <!-- Outer light emanations into the field -->
-    <g opacity="0.3">
-        <circle cx="200" cy="30" r="3" fill="#a855f7" />
-        <circle cx="370" cy="200" r="3" fill="#3b82f6" />
-        <circle cx="200" cy="370" r="3" fill="#10b981" />
-        <circle cx="30" cy="200" r="3" fill="#f59e0b" />
-
-        <circle cx="330" cy="70" r="2" fill="#ffffff" />
-        <circle cx="330" cy="330" r="2" fill="#ffffff" />
-        <circle cx="70" cy="330" r="2" fill="#ffffff" />
-        <circle cx="70" cy="70" r="2" fill="#ffffff" />
-    </g>
-
-    <!-- Dynamic pulse rings -->
-    <g opacity="0.2">
-        <circle cx="200" cy="200" r="60" fill="none" stroke="#ffffff" stroke-width="1" />
-        <circle cx="200" cy="200" r="100" fill="none" stroke="#a855f7" stroke-width="0.5" />
-        <circle cx="200" cy="200" r="140" fill="none" stroke="#3b82f6" stroke-width="0.5" />
-    </g>
-    </svg>
-    <svg width="150" height="150">
-        <circle cx="75" cy="75" r="60" fill="#fff" />
-    </svg>
     <p><a href="agent-dot.html">Visit Agent Dot</a> • <a href="index.html">Back to Home</a></p>
     <footer class="footer footer-static">
         <hr class="footer-divider">
