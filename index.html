@@ -4,7 +4,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inner Freedom through Spirituality</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            /* More subtle, contemplative gradient - deep indigo to soft dawn */
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #74546a 100%);
+            color: #FFD700;
+            font-family: 'Georgia', serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+        
+        .portal-container {
+            position: relative;
+            width: 95vw;
+            max-width: 1000px;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 3s ease-in 1s forwards;
+            color: #C9A96E;
+        }
+        
+        .figure-eight-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            height: 500px;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .infinity-svg {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            animation: fadeIn 2s ease-in 2s forwards;
+        }
+        
+        .city-circle {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .city-circle:hover {
+            transform: scale(1.15);
+            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.9));
+        }
+        
+        .city-text {
+            font-size: 14px;
+            text-anchor: middle;
+            dominant-baseline: central;
+            fill: #FFD700;
+            font-family: Georgia, serif;
+            font-weight: bold;
+            pointer-events: none;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+        
+        .bioregion-text {
+            font-size: 10px;
+            text-anchor: middle;
+            dominant-baseline: central;
+            fill: #C9A96E;
+            font-family: Georgia, serif;
+            font-style: italic;
+            pointer-events: none;
+        }
+        
+        .intention-bridge {
+            margin-top: 2rem;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s ease-in 4s forwards;
+        }
+        
+        .bridge-link {
+            color: #C9A96E;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #C9A96E;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin: 0 10px;
+        }
+        
+        .bridge-link:hover {
+            background: rgba(201, 169, 110, 0.2);
+            box-shadow: 0 0 20px rgba(201, 169, 110, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            font-size: 0.9rem;
+            color: #C9A96E;
+            opacity: 0;
+            animation: fadeIn 2s ease-in 5s forwards;
+            text-align: center;
+            line-height: 1.4;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.1; }
+            50% { opacity: 0.6; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @media (max-width: 768px) {
+            .figure-eight-container {
+                width: 100%;
+                height: 400px;
+            }
+            
+            .title {
+                font-size: 1.8rem;
+            }
+            
+            .city-text {
+                font-size: 12px;
+            }
+            
+            .bioregion-text {
+                font-size: 9px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="portal-container">
@@ -55,3 +221,190 @@
                         stroke="#dc2626" stroke-width="2"
                         onclick="openCity('toronto')">
                     <animate attributeName="r" values="30;33;30" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                <text class="city-text" x="620" y="173">1. Toronto</text>
+                <text class="bioregion-text" x="620" y="188">Great Lakes</text>
+
+                <!-- Tour Stop 2: Halifax - Acadian (ORANGE - Sacral) - Right/East anchor -->
+                <circle class="city-circle" cx="700" cy="250" r="32" 
+                        fill="rgba(251, 146, 60, 0.2)" 
+                        stroke="#fb923c" stroke-width="2"
+                        onclick="openCity('halifax')">
+                    <animate attributeName="r" values="32;36;32" dur="4s" repeatCount="indefinite" begin="0.5s"/>
+                </circle>
+                <text class="city-text" x="700" y="243">2. Halifax</text>
+                <text class="bioregion-text" x="700" y="258">Acadian</text>
+                <text class="bioregion-text" x="700" y="268">🌊 Sacral</text>
+
+                <!-- Tour Stop 3: Montreal - Estuary (YELLOW - Solar Plexus) - Lower right -->
+                <circle class="city-circle" cx="620" cy="320" r="30" 
+                        fill="rgba(250, 204, 21, 0.2)" 
+                        stroke="#facc15" stroke-width="2"
+                        onclick="openCity('montreal')">
+                    <animate attributeName="r" values="30;33;30" dur="4s" repeatCount="indefinite" begin="1s"/>
+                </circle>
+                <text class="city-text" x="620" y="313">3. Montréal</text>
+                <text class="bioregion-text" x="620" y="328">Estuary</text>
+
+                <!-- Tour Stop 4: Ottawa - Land Between (GREEN - Heart Center) -->
+                <circle class="city-circle" cx="450" cy="250" r="35" 
+                        fill="rgba(34, 197, 94, 0.2)" 
+                        stroke="#22c55e" stroke-width="3"
+                        onclick="openCity('ottawa')">
+                    <animate attributeName="r" values="35;40;35" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+                </circle>
+                <text class="city-text" x="450" y="243">4. Ottawa</text>
+                <text class="bioregion-text" x="450" y="258">Land Between</text>
+                <text class="bioregion-text" x="450" y="268">💚 Heart</text>
+
+                <!-- Tour Stop 5: Calgary - Bow (SKY BLUE - Throat) - Upper left -->
+                <circle class="city-circle" cx="280" cy="180" r="30" 
+                        fill="rgba(56, 189, 248, 0.2)" 
+                        stroke="#38bdf8" stroke-width="2"
+                        onclick="openCity('calgary')">
+                    <animate attributeName="r" values="30;33;30" dur="4s" repeatCount="indefinite" begin="2s"/>
+                </circle>
+                <text class="city-text" x="280" y="173">5. Calgary</text>
+                <text class="bioregion-text" x="280" y="188">Bow River</text>
+                <text class="bioregion-text" x="280" y="198">Throat</text>
+
+                <!-- Tour Stop 6: Edmonton - Parkland (INDIGO - Third Eye) - Left/West anchor -->
+                <circle class="city-circle" cx="200" cy="250" r="32" 
+                        fill="rgba(99, 102, 241, 0.2)" 
+                        stroke="#6366f1" stroke-width="2"
+                        onclick="openCity('edmonton')">
+                    <animate attributeName="r" values="32;36;32" dur="4s" repeatCount="indefinite" begin="2.5s"/>
+                </circle>
+                <text class="city-text" x="200" y="243">6. Edmonton</text>
+                <text class="bioregion-text" x="200" y="258">Parkland</text>
+                <text class="bioregion-text" x="200" y="268">Third Eye</text>
+
+                <!-- Tour Stop 7: Vancouver - Cascadia (VIOLET - Crown) - Lower left -->
+                <circle class="city-circle" cx="280" cy="320" r="30" 
+                        fill="rgba(168, 85, 247, 0.2)" 
+                        stroke="#a855f7" stroke-width="2"
+                        onclick="openCity('vancouver')">
+                    <animate attributeName="r" values="30;33;30" dur="4s" repeatCount="indefinite" begin="3s"/>
+                </circle>
+                <text class="city-text" x="280" y="313">7. Vancouver</text>
+                <text class="bioregion-text" x="280" y="328">Cascadia</text>
+                <text class="bioregion-text" x="280" y="338">Crown</text>
+
+                <!-- Custom tour path for the traveling light -->
+                <path id="tour-path" 
+                      d="M 620 180 L 700 250 L 620 320 L 450 250 L 280 180 L 200 250 L 280 320" 
+                      stroke="none" 
+                      fill="none"/>
+
+                <!-- Traveling star point along the tour sequence -->
+                <g id="traveling-star">
+                    <!-- Outer glow -->
+                    <circle r="8" fill="rgba(255, 255, 255, 0.3)">
+                        <animateMotion dur="21s" repeatCount="indefinite">
+                            <mpath href="#tour-path"/>
+                        </animateMotion>
+                        <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <!-- Middle glow -->
+                    <circle r="5" fill="rgba(255, 215, 0, 0.6)">
+                        <animateMotion dur="21s" repeatCount="indefinite">
+                            <mpath href="#tour-path"/>
+                        </animateMotion>
+                        <animate attributeName="r" values="5;7;5" dur="1.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <!-- Inner star point -->
+                    <circle r="2" fill="#FFFFFF">
+                        <animateMotion dur="21s" repeatCount="indefinite">
+                            <mpath href="#tour-path"/>
+                        </animateMotion>
+                        <animate attributeName="opacity" values="0.8;1;0.8" dur="1s" repeatCount="indefinite"/>
+                    </circle>
+                </g>
+
+                <!-- Ottawa heart center ripple effect - subtle and continuous -->
+                <circle cx="450" cy="250" r="5" fill="none" stroke="rgba(255, 215, 0, 0.3)" stroke-width="1">
+                    <animate attributeName="r" values="5;100;200" dur="4s" repeatCount="indefinite"/>
+                    <animate attributeName="stroke-opacity" values="0.5;0.2;0" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="450" cy="250" r="5" fill="none" stroke="rgba(34, 197, 94, 0.2)" stroke-width="1">
+                    <animate attributeName="r" values="5;120;250" dur="5s" repeatCount="indefinite" begin="1s"/>
+                    <animate attributeName="stroke-opacity" values="0.4;0.1;0" dur="5s" repeatCount="indefinite" begin="1s"/>
+                </circle>
+                <circle cx="450" cy="250" r="5" fill="none" stroke="rgba(255, 215, 0, 0.2)" stroke-width="1">
+                    <animate attributeName="r" values="5;140;300" dur="6s" repeatCount="indefinite" begin="2s"/>
+                    <animate attributeName="stroke-opacity" values="0.3;0.1;0" dur="6s" repeatCount="indefinite" begin="2s"/>
+                </circle>
+            </svg>
+        </div>
+        
+        <div class="intention-bridge">
+            <a href="intention-bridge.html" class="bridge-link">Intention Bridge</a>
+            <a href="inner-quest.html" class="bridge-link">The Inner Quest</a>
+            <a href="power-to-cooperate.html" class="bridge-link">Power to Cooperate</a>
+        </div>
+    </div>
+    
+    <div class="footer">
+        Thank you for joining Sister Shivani's Canadian Tour<br>
+        as taught by The Brahma Kumaris World Spiritual University
+    </div>
+    
+    <script>
+        function openCity(cityName) {
+            console.log('Opening portal for ' + cityName);
+            
+            // Show which city was clicked
+            var statusDiv = document.createElement('div');
+            statusDiv.textContent = '✨ Connecting to ' + cityName + ' portal...';
+            statusDiv.style.position = 'fixed';
+            statusDiv.style.top = '20px';
+            statusDiv.style.left = '50%';
+            statusDiv.style.transform = 'translateX(-50%)';
+            statusDiv.style.background = 'rgba(255, 215, 0, 0.1)';
+            statusDiv.style.color = '#FFD700';
+            statusDiv.style.padding = '12px 24px';
+            statusDiv.style.borderRadius = '25px';
+            statusDiv.style.border = '1px solid rgba(255, 215, 0, 0.3)';
+            statusDiv.style.zIndex = '1000';
+            statusDiv.style.fontSize = '14px';
+            statusDiv.style.animation = 'fadeIn 0.5s ease-in';
+            document.body.appendChild(statusDiv);
+            
+            setTimeout(function() {
+                if (statusDiv.parentNode) {
+                    statusDiv.style.opacity = '0';
+                    statusDiv.style.transition = 'opacity 0.5s';
+                    setTimeout(function() {
+                        if (statusDiv.parentNode) {
+                            document.body.removeChild(statusDiv);
+                        }
+                    }, 500);
+                }
+            }, 2000);
+        }
+        
+        // Create subtle stars (fewer, more contemplative)
+        function createStars() {
+            for (var i = 0; i < 30; i++) {
+                var star = document.createElement('div');
+                star.style.position = 'fixed';
+                star.style.width = '1px';
+                star.style.height = '1px';
+                star.style.backgroundColor = '#FFD700';
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.opacity = Math.random() * 0.3;
+                star.style.animation = 'twinkle ' + (Math.random() * 5 + 3) + 's ease-in-out infinite';
+                star.style.pointerEvents = 'none';
+                document.body.appendChild(star);
+            }
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', createStars);
+        } else {
+            createStars();
+        }
+    </script>
+</body>
+</html>
