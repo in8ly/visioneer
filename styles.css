@@ -198,6 +198,43 @@ body {
         margin-bottom: 1.5rem;
     }
 
+    .agent-dot-container {
+        max-width: 900px;
+        width: 95vw;
+        margin: 1rem auto;
+    }
+
+    .agent-dot-svg {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .back-link {
+        margin-top: 1rem;
+    }
+
+    .update-message {
+        margin-top: 2rem;
+        color: #FFD700;
+    }
+
+/* SVG Gradient Styles */
+.path-gradient-start {
+    stop-color: #FFD700;
+    stop-opacity: 0.3;
+}
+
+.path-gradient-middle {
+    stop-color: #C9A96E;
+    stop-opacity: 0.6;
+}
+
+.path-gradient-end {
+    stop-color: #FFD700;
+    stop-opacity: 0.3;
+}
+
 /* Power to Cooperate page styles */
 .diamond-container {
     max-width: 600px;
