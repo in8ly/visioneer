@@ -147,20 +147,102 @@ body {
 }
 
 @media (max-width: 768px) {
+    .portal-container {
+        width: 98vw;
+        height: 90vh;
+        padding: 1rem;
+    }
+    
     .figure-eight-container {
         width: 100%;
-        height: 400px;
+        height: 350px;
+    }
+    
+    .infinity-svg {
+        transform: scale(0.8);
     }
     
     .title {
         font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
     }
     
     .city-text {
-        font-size: 12px;
+        font-size: 11px;
     }
     
     .bioregion-text {
-        font-size: 9px;
+        font-size: 8px;
     }
+    
+    .intention-bridge {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+    
+    .bridge-link {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+}
+
+/* Additional breakpoint for very small screens */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .figure-eight-container {
+        height: 300px;
+    }
+    
+    .infinity-svg {
+        transform: scale(0.7);
+    }
+    
+    .city-text {
+        font-size: 10px;
+    }
+    
+    .bioregion-text {
+        font-size: 7px;
+    }
+    
+    .bridge-link {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.8rem;
+    }
+}
+
+/* Landscape orientation for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .portal-container {
+        height: 95vh;
+    }
+    
+    .figure-eight-container {
+        height: 400px;
+    }
+    
+    .title {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+}
 }
