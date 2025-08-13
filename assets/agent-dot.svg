@@ -197,11 +197,13 @@
     </text>
   </g>
   
-  <!-- Phase 3 text: You are worth it -->
-  <text x="400" y="300" text-anchor="middle" fill="#ffffff" font-family="Georgia, serif" font-size="32" font-weight="300" opacity="0" filter="url(#diamondLight)">
-    <tspan x="400" dy="0">you are worth it</tspan>
-    <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0.9;0.9" dur="45s" repeatCount="indefinite"/>
-    <animate attributeName="font-size" values="32;32;32;32;32;32;32;32;36;36" dur="45s" repeatCount="indefinite"/>
+  <!-- Phase 3 text: Om Shanti (final frame) -->
+  <text x="400" y="300" text-anchor="middle" fill="#ffffff" font-family="Georgia, serif" font-size="32" font-weight="400" opacity="0" filter="url(#diamondLight)" stroke="#000000" stroke-opacity="0.35" stroke-width="0.8">
+    <tspan x="400" dy="0">Om Shanti</tspan>
+    <!-- Fade in strongly near the end -->
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;1;1" dur="45s" repeatCount="indefinite"/>
+    <!-- Grow a bit for readability at the end -->
+    <animate attributeName="font-size" values="32;32;32;32;32;32;32;32;42;42" dur="45s" repeatCount="indefinite"/>
   </text>
   
   <!-- Subtle pulsing dot at the end -->

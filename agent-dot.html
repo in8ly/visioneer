@@ -16,31 +16,34 @@
             Agent Dot mandala
         </object>
     </div>
-        <p style="margin-top:1rem;"><a href="index.html">Back to Home</a></p>
-        <script src="script.js?v=20250812"></script>
-        <script>
-            // Pause the embedded SVG at the end of its first full cycle (45s)
-            (function() {
-                const obj = document.querySelector('object[data="assets/agent-dot.svg"]');
-                if (!obj) return;
-                obj.addEventListener('load', function() {
-                    try {
-                        const svgDoc = obj.contentDocument;
-                        const svgEl = svgDoc && svgDoc.documentElement;
-                        if (svgEl && typeof svgEl.pauseAnimations === 'function' && typeof svgEl.setCurrentTime === 'function') {
-                            const endMs = 45000; // total timeline dur
-                            setTimeout(() => {
-                                // Snap to the end and freeze there
-                                svgEl.setCurrentTime(45);
-                                svgEl.pauseAnimations();
-                            }, endMs);
-                        }
-                    } catch (e) {
-                        // no-op if cross-origin or unsupported
+    <p style="margin-top:1rem;"><a href="index.html">Back to Home</a></p>
+    <script src="script.js?v=20250812"></script>
+    <script>
+        // Pause the embedded SVG just before the end of its first full cycle (~45s)
+        (function () {
+            const obj = document.querySelector('object[data="assets/agent-dot.svg"]');
+            if (!obj) return;
+            obj.addEventListener('load', function () {
+                try {
+                    const svgDoc = obj.contentDocument;
+                    const svgEl = svgDoc && svgDoc.documentElement;
+                    if (svgEl && typeof svgEl.pauseAnimations === 'function' && typeof svgEl.setCurrentTime === 'function') {
+                        // Stop slightly before the loop boundary so end-state stays visible
+                        const endMs = 44950; // ms
+                        setTimeout(() => {
+                            // Snap near the end and freeze there
+                            svgEl.setCurrentTime(44.95);
+                            svgEl.pauseAnimations();
+                            // Nudge once more to ensure raster updates after pause
+                            requestAnimationFrame(() => svgEl.setCurrentTime(44.95));
+                        }, endMs);
                     }
-                });
-            })();
-        </script>
+                } catch (e) {
+                    // no-op if cross-origin or unsupported
+                }
+            });
+        })();
+    </script>
 </body>
 
 </html>
