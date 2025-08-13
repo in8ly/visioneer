@@ -46,6 +46,9 @@ node bump-version.js            # bump to today (auto-increment if already today
 node bump-version.js --dry-run  # preview changes
 node bump-version.js --force    # reset today’s references to no suffix
 node bump-version.js --date 20250813  # bump using a specific date
+node bump-version.js --git       # also git add/commit/push changed HTML files
+node bump-version.js --git --no-push   # commit locally without pushing
+node bump-version.js --git --msg "chore: bump versions"  # custom commit message
 ```
 
 Add new asset paths to the `assetPatterns` array in `bump-version.js` if needed.
