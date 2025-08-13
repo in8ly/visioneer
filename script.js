@@ -82,19 +82,24 @@ function createCityRipples(svg, center, cityIndex) {
     }
 }
 
-// Start the synchronized ripple sequence
+// Start the synchronized ripple sequence by tracking the traveling star
 function startRippleSequence() {
-    // Tour sequence timing (21 seconds total, 7 cities)
-    // Toronto(0s) → Halifax(3s) → Montréal(6s) → Ottawa(9s) → Calgary(12s) → Edmonton(15s) → Vancouver(18s)
-    const citySequence = [
-        { city: 1, delay: 0 },     // Toronto
-        { city: 2, delay: 3000 },  // Halifax  
-        { city: 3, delay: 6000 },  // Montréal
-        { city: 4, delay: 9000 },  // Ottawa
-        { city: 5, delay: 12000 }, // Calgary
-        { city: 6, delay: 15000 }, // Edmonton
-        { city: 7, delay: 18000 }  // Vancouver
+    const travelingStar = document.querySelector('#traveling-star');
+    if (!travelingStar) return;
+
+    // City positions from centers.json
+    const cityPositions = [
+        { cx: 620, cy: 180, city: 1 }, // Toronto
+        { cx: 700, cy: 250, city: 2 }, // Halifax  
+        { cx: 620, cy: 320, city: 3 }, // Montréal
+        { cx: 450, cy: 250, city: 4 }, // Ottawa
+        { cx: 280, cy: 180, city: 5 }, // Calgary
+        { cx: 200, cy: 250, city: 6 }, // Edmonton
+        { cx: 280, cy: 320, city: 7 }  // Vancouver
     ];
+
+    let lastTriggeredCity = null;
+    let animationStartTime = performance.now();
 
     function triggerCityRipple(cityNumber) {
         // Trigger 3 ripples with slight delays for each city
@@ -102,40 +107,70 @@ function startRippleSequence() {
             setTimeout(() => {
                 const ripple = document.querySelector(`.city-${cityNumber}-ripple-${i}`);
                 if (ripple) {
-                    // Reset the ripple
-                    ripple.setAttribute('r', ripple.previousElementSibling?.getAttribute('r') || '30');
-                    ripple.setAttribute('opacity', '0.6');
+                    // Reset and trigger the ripple
+                    const cityCircle = document.querySelector(`#city-${cityNumber}`);
+                    const baseRadius = cityCircle ? cityCircle.getAttribute('r') : '30';
+                    
+                    ripple.setAttribute('r', baseRadius);
+                    ripple.setAttribute('opacity', '0');
                     
                     // Animate the ripple expanding and fading
-                    const startRadius = parseInt(ripple.getAttribute('r'));
+                    const startRadius = parseInt(baseRadius);
                     const endRadius = startRadius + 60 + (i * 20);
                     
                     // Create smooth ripple animation
                     ripple.innerHTML = `
                         <animate attributeName="r" 
                                 values="${startRadius};${endRadius}" 
-                                dur="2s" 
+                                dur="2.5s" 
                                 begin="0s"/>
                         <animate attributeName="opacity" 
-                                values="0.6;0.3;0" 
-                                dur="2s" 
+                                values="0.7;0.4;0" 
+                                dur="2.5s" 
                                 begin="0s"/>
                     `;
                 }
-            }, i * 200); // Stagger each ripple by 200ms
+            }, i * 300); // Stagger each ripple by 300ms
         }
     }
 
-    // Start the sequence and repeat every 21 seconds
-    function runSequence() {
-        citySequence.forEach(({ city, delay }) => {
-            setTimeout(() => triggerCityRipple(city), delay);
-        });
+    function checkStarPosition() {
+        const currentTime = performance.now();
+        const elapsed = (currentTime - animationStartTime) % 21000; // 21 second cycle
+        
+        // Calculate which city the star should be near based on timing
+        // The star follows this path timing approximately:
+        // Toronto: 0-2.5s, Halifax: 2.5-5.5s, Montreal: 5.5-8.5s, Ottawa: 8.5-11.5s, 
+        // Calgary: 11.5-14.5s, Edmonton: 14.5-17.5s, Vancouver: 17.5-21s
+        
+        let currentCity = null;
+        if (elapsed >= 0 && elapsed < 3000) currentCity = 1;      // Toronto
+        else if (elapsed >= 3000 && elapsed < 6000) currentCity = 2;   // Halifax
+        else if (elapsed >= 6000 && elapsed < 9000) currentCity = 3;   // Montreal
+        else if (elapsed >= 9000 && elapsed < 12000) currentCity = 4;  // Ottawa
+        else if (elapsed >= 12000 && elapsed < 15000) currentCity = 5; // Calgary
+        else if (elapsed >= 15000 && elapsed < 18000) currentCity = 6; // Edmonton
+        else if (elapsed >= 18000) currentCity = 7;             // Vancouver
+
+        // Trigger ripple when star reaches a new city
+        if (currentCity && currentCity !== lastTriggeredCity) {
+            triggerCityRipple(currentCity);
+            lastTriggeredCity = currentCity;
+        }
+
+        // Reset tracking at the start of each cycle
+        if (elapsed < 500) { // Reset in first 500ms of cycle
+            lastTriggeredCity = null;
+        }
     }
 
-    // Start immediately and repeat every 21 seconds
-    runSequence();
-    setInterval(runSequence, 21000);
+    // Check star position every 100ms for smooth tracking
+    setInterval(checkStarPosition, 100);
+    
+    // Also reset the animation start time periodically to stay in sync
+    setInterval(() => {
+        animationStartTime = performance.now();
+    }, 21000);
 }
 
 // Create subtle stars (fewer, more contemplative)
