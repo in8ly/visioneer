@@ -249,6 +249,63 @@ body {
     height: auto;
 }
 
+/* Fallback placeholder if unified diamond SVG fails to load */
+.diamond-fallback {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, serif;
+    color: #e0f2fe;
+    text-align: center;
+    padding: 1rem;
+}
+
+.diamond-fallback-core {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle at 30% 30%, #ffffff 0%, #c7d2fe 40%, #6366f1 70%, transparent 100%);
+    transform: rotate(45deg);
+    border-radius: 4px;
+    box-shadow: 0 0 18px 4px #818cf8aa, 0 0 32px 8px #6366f155;
+    animation: pulseDiamond 3.5s ease-in-out infinite;
+}
+
+.diamond-fallback-ring {
+    position: absolute;
+    border: 1px solid #7dd3fc55;
+    border-radius: 50%;
+    animation: ringExpand 6s linear infinite;
+    mix-blend-mode: screen;
+}
+
+.diamond-fallback-ring.ring1 { width: 140px; height: 140px; }
+.diamond-fallback-ring.ring2 { width: 220px; height: 220px; animation-delay: 3s; }
+
+.diamond-fallback-text {
+    margin-top: 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    color: #c7d2fe;
+    max-width: 360px;
+}
+
+@keyframes pulseDiamond {
+    0%, 100% { transform: rotate(45deg) scale(1); opacity: 0.85; }
+    50% { transform: rotate(45deg) scale(1.15); opacity: 1; }
+}
+
+@keyframes ringExpand {
+    0% { transform: scale(0.6); opacity: 0.7; }
+    70% { transform: scale(1); opacity: 0; }
+    100% { transform: scale(1); opacity: 0; }
+}
+
 .footer-static {
     position: static;
     margin-top: 2rem;
