@@ -1,0 +1,7 @@
+{
+    "liveServer.settings.fullReload": true,
+    "liveServer.settings.wait": 150,
+    "liveServer.settings.port": 5500,
+    "files.autoSave": "onFocusChange",
+    "editor.formatOnSave": true
+}
