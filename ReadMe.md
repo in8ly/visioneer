@@ -37,6 +37,19 @@ Increment the trailing value (date-based or a simple counter) whenever you chang
 
 Convention used here: `?v=YYYYMMDD[-optional-increment]`.
 
+### Version Helper Script
+
+To automate bumping all asset version query strings across HTML files, use the provided Node script:
+
+```
+node bump-version.js            # bump to today (auto-increment if already today)
+node bump-version.js --dry-run  # preview changes
+node bump-version.js --force    # reset today’s references to no suffix
+node bump-version.js --date 20250813  # bump using a specific date
+```
+
+Add new asset paths to the `assetPatterns` array in `bump-version.js` if needed.
+
 ## 🕊️ Intention
 
 To offer a space of stillness, beauty, and truth  
