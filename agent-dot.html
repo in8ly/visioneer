@@ -12,7 +12,7 @@
     <h1>Agent Dot</h1>
     <p>A weekly SVG mandala reminding you that the point of it all is the point!</p>
     <div style="max-width:900px; width:95vw; margin:1rem auto;">
-        <object data="assets/agent-dot.svg" type="image/svg+xml" style="width:100%; height:auto; display:block;">
+    <object data="assets/agent-dot.svg?v=20250812" type="image/svg+xml" style="width:100%; height:auto; display:block;">
             Agent Dot mandala
         </object>
     </div>
@@ -21,7 +21,7 @@
     <script>
         // Pause the embedded SVG just before the end of its first full cycle (~45s)
         (function () {
-            const obj = document.querySelector('object[data="assets/agent-dot.svg"]');
+                const obj = document.querySelector('object[data^="assets/agent-dot.svg"]');
             if (!obj) return;
             obj.addEventListener('load', function () {
                 try {
