@@ -63,6 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error fetching or parsing centers.json:', error));
 
     createStars();
+
+    initFocusMode();
 });
 
 // Create ripple elements for each city
@@ -188,4 +190,65 @@ function createStars() {
         star.style.pointerEvents = 'none';
         document.body.appendChild(star);
     }
+}
+
+// Focus Mode & Deep Geometry
+function initFocusMode() {
+    const btn = document.getElementById('focusToggle');
+    const overlay = document.getElementById('focusOverlay');
+    const focusMount = document.getElementById('focusDiamondMount');
+    const deepLayer = document.getElementById('deepGeometryLayer');
+    if (!btn || !overlay || !focusMount) return;
+
+    let active = false;
+    let deepTimer = null;
+    let cloned = null;
+
+    function enter() {
+        if (active) return;
+        active = true;
+        document.body.classList.add('focus-mode');
+        overlay.classList.remove('initial-hidden');
+        overlay.style.opacity = '1';
+        overlay.setAttribute('aria-hidden', 'false');
+        btn.setAttribute('aria-pressed', 'true');
+        btn.textContent = 'EXIT';
+        // Clone the diamond object if present
+        const diamondObj = document.querySelector('.diamond-container object');
+        if (diamondObj) {
+            cloned = diamondObj.cloneNode(true);
+            cloned.removeAttribute('width');
+            cloned.removeAttribute('height');
+            cloned.style.maxWidth = '100%';
+            focusMount.innerHTML = '';
+            focusMount.appendChild(cloned);
+        } else {
+            focusMount.innerHTML = '<div style="color:#e0f2fe;">(Diamond not loaded yet)</div>';
+        }
+        // Schedule deep geometry reveal after 12s of sustained focus
+        deepTimer = setTimeout(() => {
+            document.body.classList.add('show-deep-geometry');
+        }, 12000);
+    }
+
+    function exit() {
+        if (!active) return;
+        active = false;
+        document.body.classList.remove('focus-mode');
+        overlay.style.opacity = '0';
+        overlay.setAttribute('aria-hidden', 'true');
+        btn.setAttribute('aria-pressed', 'false');
+        btn.textContent = 'FOCUS';
+        document.body.classList.remove('show-deep-geometry');
+        if (deepTimer) { clearTimeout(deepTimer); deepTimer = null; }
+        // Remove cloned content after fade to free resources
+        setTimeout(() => { focusMount.innerHTML = ''; }, 900);
+    }
+
+    btn.addEventListener('click', () => active ? exit() : enter());
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') exit();
+    });
+    // Accessibility: exit on overlay double-click
+    overlay.addEventListener('dblclick', exit);
 }

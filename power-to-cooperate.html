@@ -9,6 +9,28 @@
 </head>
 
 <body>
+    <button class="focus-toggle-btn" id="focusToggle" aria-pressed="false" aria-label="Enter focus mode">FOCUS</button>
+    <div class="focus-overlay-root initial-hidden" id="focusOverlay" aria-hidden="true">
+        <div class="focus-overlay-inner">
+            <!-- Deep geometry layer (initially hidden until timer) -->
+            <div class="deep-geometry-layer" id="deepGeometryLayer">
+                <svg class="deep-geometry-svg" viewBox="0 0 200 200" role="img" aria-label="Subtle sacred geometry pattern">
+                    <g stroke="#7dd3fc55" stroke-width="0.4" fill="none">
+                        <circle cx="100" cy="100" r="30" />
+                        <circle cx="100" cy="100" r="55" />
+                        <circle cx="100" cy="100" r="80" />
+                        <polygon points="100,25 162,62 162,138 100,175 38,138 38,62" />
+                        <polygon points="100,10 185,60 185,140 100,190 15,140 15,60" stroke="#7dd3fc22" />
+                        <line x1="100" y1="0" x2="100" y2="200" stroke="#7dd3fc22" />
+                        <line x1="0" y1="100" x2="200" y2="100" stroke="#7dd3fc22" />
+                    </g>
+                </svg>
+            </div>
+            <!-- Diamond will be cloned here dynamically for focus -->
+            <div id="focusDiamondMount"></div>
+            <div class="focus-exit-hint" id="focusExitHint">Press ESC or FOCUS to exit</div>
+        </div>
+    </div>
     <h1>Power to Cooperate</h1>
     <p>At the end of our journey. We find strength in unity.</p>
     <div class="portal-container">
