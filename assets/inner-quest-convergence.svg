@@ -1,0 +1,127 @@
+<svg class="pilgrimage-svg" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Inner Quest Convergence Animation</title>
+  <desc id="desc">Animated circles representing cities converging to a unified radiant center with expanding rings and labels for bioregions.</desc>
+  <defs>
+    <radialGradient id="centerGlow">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#FFD700" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#FFD700" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <!-- Concentric mandala rings -->
+  <g opacity="0.12" aria-hidden="true">
+    <circle cx="400" cy="400" r="100" fill="none" stroke="#FFD700" stroke-width="0.6" />
+    <circle cx="400" cy="400" r="150" fill="none" stroke="#FFD700" stroke-width="0.55" />
+    <circle cx="400" cy="400" r="200" fill="none" stroke="#FFD700" stroke-width="0.5" />
+    <circle cx="400" cy="400" r="250" fill="none" stroke="#FFD700" stroke-width="0.45" />
+    <circle cx="400" cy="400" r="300" fill="none" stroke="#FFD700" stroke-width="0.4" />
+    <circle cx="400" cy="400" r="350" fill="none" stroke="#FFD700" stroke-width="0.35" />
+  </g>
+  <!-- Animated city / chakra convergence -->
+  <g id="toronto-group">
+    <circle cx="400" cy="100" r="40" fill="rgba(220,38,38,0.3)" stroke="#dc2626" stroke-width="3">
+      <animate attributeName="cy" values="100;400" dur="3s" begin="3s" fill="freeze" />
+      <animate attributeName="r" values="40;60" dur="3s" begin="3s" fill="freeze" />
+      <animate attributeName="fill-opacity" values="0.3;0.15" dur="3s" begin="3s" fill="freeze" />
+    </circle>
+    <text x="400" y="100" text-anchor="middle" fill="#dc2626" font-size="14" opacity="1">Toronto
+      <animate attributeName="opacity" values="1;0" dur="1s" begin="3s" fill="freeze" />
+    </text>
+  </g>
+  <g id="halifax-group">
+    <circle cx="550" cy="200" r="40" fill="rgba(251,146,60,0.3)" stroke="#fb923c" stroke-width="3">
+      <animate attributeName="cx" values="550;400" dur="3s" begin="3.5s" fill="freeze" />
+      <animate attributeName="cy" values="200;400" dur="3s" begin="3.5s" fill="freeze" />
+      <animate attributeName="r" values="40;90" dur="3s" begin="3.5s" fill="freeze" />
+      <animate attributeName="fill-opacity" values="0.3;0.15" dur="3s" begin="3.5s" fill="freeze" />
+    </circle>
+    <text x="550" y="200" text-anchor="middle" fill="#fb923c" font-size="14" opacity="1">Halifax
+      <animate attributeName="opacity" values="1;0" dur="1s" begin="3.5s" fill="freeze" />
+    </text>
+  </g>
+  <g id="montreal-group">
+    <circle cx="600" cy="400" r="40" fill="rgba(250,204,21,0.3)" stroke="#facc15" stroke-width="3">
+      <animate attributeName="cx" values="600;400" dur="3s" begin="4s" fill="freeze" />
+      <animate attributeName="r" values="40;120" dur="3s" begin="4s" fill="freeze" />
+      <animate attributeName="fill-opacity" values="0.3;0.15" dur="3s" begin="4s" fill="freeze" />
+    </circle>
+    <text x="600" y="400" text-anchor="middle" fill="#facc15" font-size="14" opacity="1">Montréal
+      <animate attributeName="opacity" values="1;0" dur="1s" begin="4s" fill="freeze" />
+    </text>
+  </g>
+  <g id="ottawa-group">
+    <circle cx="550" cy="600" r="40" fill="rgba(34,197,94,0.3)" stroke="#22c55e" stroke-width="3">
+      <animate attributeName="cx" values="550;400" dur="3s" begin="4.5s" fill="freeze" />
+      <animate attributeName="cy" values="600;400" dur="3s" begin="4.5s" fill="freeze" />
+      <animate attributeName="r" values="40;150" dur="3s" begin="4.5s" fill="freeze" />
+      <animate attributeName="fill-opacity" values="0.3;0.15" dur="3s" begin="4.5s" fill="freeze" />
+    </circle>
+    <text x="550" y="600" text-anchor="middle" fill="#22c55e" font-size="14" opacity="1">Ottawa
+      <animate attributeName="opacity" values="1;0" dur="1s" begin="4.5s" fill="freeze" />
+    </text>
+  </g>
+  <g id="calgary-group">
+    <circle cx="400" cy="700" r="40" fill="rgba(56,189,248,0.3)" stroke="#38bdf8" stroke-width="3">
+      <animate attributeName="cy" values="700;400" dur="3s" begin="5s" fill="freeze" />
+      <animate attributeName="r" values="40;180" dur="3s" begin="5s" fill="freeze" />
+      <animate attributeName="fill-opacity" values="0.3;0.15" dur="3s" begin="5s" fill="freeze" />
+    </circle>
+    <text x="400" y="700" text-anchor="middle" fill="#38bdf8" font-size="14" opacity="1">Calgary
+      <animate attributeName="opacity" values="1;0" dur="1s" begin="5s" fill="freeze" />
+    </text>
+  </g>
+  <g id="edmonton-group">
+    <circle cx="250" cy="600" r="40" fill="rgba(99,102,241,0.3)" stroke="#6366f1" stroke-width="3">
+      <animate attributeName="cx" values="250;400" dur="3s" begin="5.5s" fill="freeze" />
+      <animate attributeName="cy" values="600;400" dur="3s" begin="5.5s" fill="freeze" />
+      <animate attributeName="r" values="40;210" dur="3s" begin="5.5s" fill="freeze" />
+      <animate attributeName="fill-opacity" values="0.3;0.15" dur="3s" begin="5.5s" fill="freeze" />
+    </circle>
+    <text x="250" y="600" text-anchor="middle" fill="#6366f1" font-size="14" opacity="1">Edmonton
+      <animate attributeName="opacity" values="1;0" dur="1s" begin="5.5s" fill="freeze" />
+    </text>
+  </g>
+  <g id="vancouver-group">
+    <circle cx="200" cy="400" r="40" fill="rgba(168,85,247,0.3)" stroke="#a855f7" stroke-width="3">
+      <animate attributeName="cx" values="200;400" dur="3s" begin="6s" fill="freeze" />
+      <animate attributeName="r" values="40;240" dur="3s" begin="6s" fill="freeze" />
+      <animate attributeName="fill-opacity" values="0.3;0.15" dur="3s" begin="6s" fill="freeze" />
+    </circle>
+    <text x="200" y="400" text-anchor="middle" fill="#a855f7" font-size="14" opacity="1">Vancouver
+      <animate attributeName="opacity" values="1;0" dur="1s" begin="6s" fill="freeze" />
+    </text>
+  </g>
+  <!-- Unity perimeter & inner activation -->
+  <circle cx="400" cy="400" r="270" fill="none" stroke="#FF1493" stroke-width="2" opacity="0">
+    <animate attributeName="opacity" values="0;0.6" dur="2s" begin="8s" fill="freeze" />
+    <animate attributeName="r" values="270;280;270" dur="4s" begin="9s" repeatCount="indefinite" />
+    <animate attributeName="stroke-width" values="2;4;2" dur="4s" begin="9s" repeatCount="indefinite" />
+  </circle>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="2s" begin="7s" fill="freeze" />
+    <circle cx="400" cy="400" r="5" fill="#FFFFFF">
+      <animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite" begin="7s" />
+    </circle>
+    <circle cx="400" cy="400" r="15" fill="url(#centerGlow)">
+      <animate attributeName="r" values="15;25;15" dur="3s" repeatCount="indefinite" begin="7s" />
+    </circle>
+  </g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0.35" dur="1.2s" begin="9s" fill="freeze" />
+    <circle cx="400" cy="400" r="10" fill="none" stroke="#FFD700" stroke-width="1">
+      <animate attributeName="r" values="10;350;10" dur="7s" repeatCount="indefinite" begin="9s" />
+      <animate attributeName="stroke-opacity" values="0.5;0;0.5" dur="7s" repeatCount="indefinite" begin="9s" />
+    </circle>
+  </g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0.7" dur="2s" begin="10s" fill="freeze" />
+    <text x="400" y="340" text-anchor="middle" fill="#dc2626" font-size="10">Great Lakes</text>
+    <text x="400" y="310" text-anchor="middle" fill="#fb923c" font-size="10">Acadian</text>
+    <text x="400" y="280" text-anchor="middle" fill="#facc15" font-size="10">Estuary</text>
+    <text x="400" y="250" text-anchor="middle" fill="#22c55e" font-size="10">Land Between</text>
+    <text x="400" y="220" text-anchor="middle" fill="#38bdf8" font-size="10">Bow River</text>
+    <text x="400" y="190" text-anchor="middle" fill="#6366f1" font-size="10">Parkland</text>
+    <text x="400" y="160" text-anchor="middle" fill="#a855f7" font-size="10">Cascadia</text>
+    <text x="400" y="130" text-anchor="middle" fill="#FF1493" font-size="12">Unity</text>
+  </g>
+</svg>
