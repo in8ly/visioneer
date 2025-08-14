@@ -551,6 +551,9 @@ p.pilgrimage-subtitle { font-size:1.1rem; margin:.75rem 0 0; color:#C9A96E; lett
 
 .sr-only { position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
 
+/* Fallback message inside SVG object */
+.svg-fallback-msg { color:#C9A96E; font-size:0.9rem; max-width:320px; line-height:1.4; margin:0 auto; text-align:center; padding:0 8px; }
+
 @media (max-width: 780px) {
     h1.pilgrimage-title { font-size:2.05rem; }
     .narrative { font-size:.92rem; bottom:4%; }
