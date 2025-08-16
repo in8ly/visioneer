@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agent Dot</title>
-    <link rel="stylesheet" href="styles.css?v=20250813-4">
+    <link rel="stylesheet" href="styles.css?v=20250815">
     <link rel="canonical" href="https://visioneer-jh23jezin-chariheys-projects.vercel.app/agent-dot" />
 </head>
 
@@ -13,16 +13,16 @@
     <h1>Agent Dot</h1>
     <p>A weekly SVG mandala reminding you that the point of it all is the point!</p>
     <div class="agent-dot-container">
-        <object data="assets/agent-dot.svg?v=20250813-4" type="image/svg+xml" class="agent-dot-svg">
+        <object data="assets/agent-dot.svg?v=20250815" type="image/svg+xml" class="agent-dot-svg">
             Agent Dot mandala
         </object>
     </div>
     <p class="back-link"><a href="index.html">Back to Home</a></p>
-    <script src="script.js?v=20250812"></script>
+    <script src="script.js?v=20250815"></script>
     <script>
         // Pause the embedded SVG just before the end of its first full cycle (~45s)
         (function () {
-            const obj = document.querySelector('object[data^="assets/agent-dot.svg"]');
+            const obj = document.querySelector('object[data^="assets/agent-dot.svg?v=20250815"]');
             if (!obj) return;
             obj.addEventListener('load', function () {
                 try {
