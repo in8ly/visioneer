@@ -53,8 +53,8 @@ if (!/^\d{8}$/.test(baseDate)) {
 const assetPatterns = [
     'styles.css',
     'script.js',
-    'assets/agent-dot.svg',
-    'assets/diamond-unified.svg'
+    'assets/agent-dot.svg'
+    // Removed unused diamond-unified.svg (pruned obsolete diamond variants)
 ];
 
 // Build a regex that matches any of the asset references with optional ?v=...
